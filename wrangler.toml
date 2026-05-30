@@ -1,0 +1,15 @@
+name = "imoveis-premium"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Build settings
+[build]
+command = "npm run build"
+upload.dir = ".next"
+
+# For Cloudflare Pages, use @cloudflare/next-on-pages
+# Install: npm install -D @cloudflare/next-on-pages
+# Build: npx @cloudflare/next-on-pages
+
+[vars]
+NEXT_PUBLIC_SITE_URL = "https://imoveis.pages.dev"
