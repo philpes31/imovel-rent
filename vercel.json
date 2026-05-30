@@ -3,40 +3,54 @@
   "buildCommand": "next build",
   "devCommand": "next dev",
   "installCommand": "npm install",
-  "regions": ["gru1"],
+  "regions": [
+    "gru1"
+  ],
   "crons": [
     {
       "path": "/api/cron/feed-refresh",
-      "schedule": "0 */2 * * *"
+      "schedule": "0 0 * * *"
     }
   ],
   "env": {
-    "NEXT_PUBLIC_SUPABASE_URL":      "@supabase_url",
+    "NEXT_PUBLIC_SUPABASE_URL": "@supabase_url",
     "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase_anon_key",
-    "SUPABASE_SERVICE_ROLE_KEY":     "@supabase_service_role_key",
-    "NEXT_PUBLIC_SITE_URL":          "@site_url",
-    "NEXT_PUBLIC_WHATSAPP_NUMBER":   "@whatsapp_number",
-    "NEXT_PUBLIC_GOOGLE_MAPS_KEY":   "@google_maps_key",
-    "FEED_PROVIDER_NAME":            "@feed_provider_name",
-    "FEED_CONTACT_EMAIL":            "@feed_contact_email",
-    "FEED_CONTACT_NAME":             "@feed_contact_name",
-    "FEED_CONTACT_PHONE":            "@feed_contact_phone",
-    "CRON_SECRET":                   "@cron_secret",
-    "WEBHOOK_SECRET":                "@webhook_secret"
+    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key",
+    "NEXT_PUBLIC_SITE_URL": "@site_url",
+    "NEXT_PUBLIC_WHATSAPP_NUMBER": "@whatsapp_number",
+    "NEXT_PUBLIC_GOOGLE_MAPS_KEY": "@google_maps_key",
+    "FEED_PROVIDER_NAME": "@feed_provider_name",
+    "FEED_CONTACT_EMAIL": "@feed_contact_email",
+    "FEED_CONTACT_NAME": "@feed_contact_name",
+    "FEED_CONTACT_PHONE": "@feed_contact_phone",
+    "CRON_SECRET": "@cron_secret",
+    "WEBHOOK_SECRET": "@webhook_secret"
   },
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options",  "value": "nosniff" },
-        { "key": "X-Frame-Options",         "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy",         "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     },
     {
       "source": "/api/feed/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=1800" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=1800"
+        }
       ]
     }
   ]
